@@ -1,0 +1,17 @@
+name: Relay Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "test message"
+        required: true
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run: |
+          echo "Message received:"
+          echo "${{ github.event.inputs.message }}"
